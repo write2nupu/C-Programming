@@ -1,0 +1,483 @@
+QUES. write a program to calculate factorial of a number.
+ANS-> 
+#include<stdio.h>
+void main(){
+    int n,f=1,i;
+    printf("Enter  number ");
+    scanf("%d",&n);
+    for(i=n;i>=1;i--)
+    {
+        f=f*i;
+    }
+    printf("Factorial %d",f);
+}
+
+
+	
+QUES. write a program to print reverse of a 3 digit number.
+ANS-> 
+#include<stdio.h>
+void main(){
+    int n,x,y,z,r;
+    printf("Enter number ");
+    scanf("%d",&n);
+
+    y=n%10;
+    x=n/100;
+    z=((n%100)-y)/10;
+    r=(y*100)+(z*10)+x;
+
+    printf("Reverse of number is  %d",r); 
+}
+
+
+
+QUES. print maximum and minimum from arrays.
+ANS -> 
+#include<stdio.h>
+void main(){
+    int max,min,n,i;
+    int a[10];
+    
+    printf("enter size of array ");
+    scanf("%d",&n);
+    printf("enter elements ");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    
+    max=a[0];
+    for (i=0;i<n;i++){
+        if(max<a[i])
+        {
+            max=a[i];
+        }
+    }
+    printf("%d \n",max);
+
+    min=a[0];
+    for (i=0;i<n;i++){
+        if(min>a[i])
+        {
+            min=a[i];
+        }
+    }
+    printf("%d",min);
+}
+
+
+
+QUES. print transpose of matrix through arrays
+ANS --> 
+#include<stdio.h>
+void main(){
+    int a[3][2],i,j;
+    printf("Enter matrix ");
+    
+    for(i=0;i<=2;i++){
+        for(j=0;j<=1;j++){
+            scanf("%d",&a[i][j]);
+            
+        }
+    }
+    printf("Transpose of matrix is ");
+    for(i=0;i<=2;i++){
+        for(j=0;j<=1;j++){
+            printf("%d",a[j][i]);
+            
+        }
+    }
+}
+
+
+
+QUES. Print sum of diagonal elements in 2D array
+ANS --> 
+#include<stdio.h>
+void main(){
+    int a[3][3],i,j,sum;
+    printf("Enter matrix ");
+    
+    for(i=0;i<=2;i++){
+        for(j=0;j<=2;j++){
+            scanf("%d",&a[i][j]);
+            
+        }
+    }
+    printf("SUM is ");
+    for(i=0;i<=2;i++){
+        for(j=0;j<=2;j++){
+            if(i==j){
+            sum=sum+a[i][j];
+            }
+        }
+    }
+    printf("%d",sum);
+}
+
+
+
+QUES. Sum of 2 matrix A and B through 2D array.
+ANS --> 
+#include<stdio.h>
+void main(){
+    int a[3][3],b[3][3],c[3][3],i,j,sum;
+    printf("Enter matrix 1 ");
+    for(i=0;i<=2;i++){
+        for(j=0;j<=2;j++){
+            scanf("%d",&a[i][j]);
+            
+        }
+    }
+    
+    printf("Enter matrix 2 ");
+
+    for(i=0;i<=2;i++){
+        for(j=0;j<=2;j++){
+            scanf("%d",&b[i][j]);
+            
+        }
+    }
+    
+    printf("SUM is \n ");
+    for(i=0;i<=2;i++){
+        for(j=0;j<=2;j++){
+            c[i][j]=a[i][j]+b[i][j];
+            printf("%d ",c[i][j]);
+            }
+            printf("\n");
+        }
+    }
+
+
+--------------X--------------------------X----------------------------X------------------------------X
+
+
+<TOPIC___FUNCTION>
+1. WITHOUT parameters , WITHOUT return value.
+2. WITHOUT parameters , WITH return value.
+3. WITH parameters , WITHOUT return value.
+4. WITH parameters , WITH return value.
+
+EXAMPLE : factorial of a number using user-defined function.
+     WAY-1
+#include<stdio.h>
+void main()
+{
+    fac();
+}
+void fac()
+{
+    int n,f=1,i;
+    printf("Enter  number ");
+    scanf("%d",&n);
+    for(i=n;i>=1;i--)
+    {
+        f=f*i;
+    }
+    printf("Factorial %d",f);
+}
+
+
+     WAY-2
+#include<stdio.h>
+void main()
+{
+    int num;
+    num=fac();
+    printf(num);
+}
+void fac()
+{
+    int n,f=1,i;
+    printf("Enter  number ");
+    scanf("%d",&n);
+    for(i=n;i>=1;i--)
+    {
+        f=f*i;
+    }
+    printf("Factorial %d",f);
+}
+
+
+     WAY-3
+#include<stdio.h>
+void main(){
+    int a,b;
+    printf("Enter first ");
+    scanf("%d",&a);
+    printf("Enter second ");
+    scanf("%d",&b);
+    add(a,b);
+}
+
+void add(int x,int y){
+    printf("sum is %d",x+y);
+}
+
+
+     WAY-4
+void main(){
+    int a,b,sum;
+    printf("Enter first ");
+    scanf("%d",&a);
+    printf("Enter second ");
+    scanf("%d",&b);
+    sum=add(a,b);
+    printf("sum %d ",sum);
+}
+int add(int x,int y){
+    return(x+y);
+}
+
+-----------------------------------------------X--------------------------X----------------------------X------------------------------X
+
+BUBBLE SORT:
+
+#include<stdio.h>
+void main(){
+    int i,j,k,t;
+    int a[5];
+    
+    printf("enter array ");
+
+    for(i=0;i<=4;i++){
+        scanf("%d",&a[i]);
+    }
+    for(j=0;j<=3;j++){
+        for(i=0;i<=3;i++){
+            if(a[i]>a[i+1])
+            {
+                t=a[i+1];
+                a[i+1]=a[i];
+                a[i]=t;
+            }
+        }
+    }
+    for(i=0;i<=4;i++){
+    printf("%d \n ",a[i]);
+    }
+}
+
+
+SELECTION SORT :
+
+#include<stdio.h>
+void main(){
+    int a[5],i,j,t;
+    printf("Enter array ");
+    for(i=0;i<=4;i++){
+        scanf("%d",&a[i]);
+    }
+    for(j=0;j<=3;j++){
+        for(i=j;i<=3;i++){
+            if(a[j]>a[i+1]){
+                t=a[i+1];
+                a[i+1]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+    for(i=0;i<=4;i++){
+        printf("%d ",a[i]);
+    }
+}
+
+
+TO FIND SOMETHING :
+
+for(k=0;k<=9;k++){
+    if(x=a[i]){
+        printf("found");
+        break;
+    }
+    }
+
+----------------------------------x----------------------------------------------x------------------------------------------------
+
+POINTER :-
+#include<stdio.h>
+void main(){
+
+int myAge = 43;     // An int variable
+int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
+
+// Output the value of myAge (43)
+printf("%d\n", myAge);
+
+// Output the memory address of myAge (0x7ffe5367e044)
+printf("%p\n", &myAge);
+
+// Output the memory address of myAge with the pointer (0x7ffe5367e044)
+printf("%p\n", ptr);
+}
+
+----------------------------------x----------------------------------------------x------------------------------------------------
+
+STRING
+
+Q1 : CALCULATE LENGTH OF A STRING ENTERED
+#include<stdio.h>
+void printString(char arr[]);
+int countLength(char arr[]);
+
+void main(){
+    char name[100];
+    fgets(name,100,stdin);
+    printf("length is: %d",countLength(name));
+
+}
+
+int countLength(char arr[]){
+    int count=0;
+    for(int i=0; arr[i]!='\0' ; i++){
+        count++;
+    }
+    return count-1;
+}
+void printString(char arr[]){
+    for(int i=0; arr[i]!='\0' ; i++){
+        printf("%c",arr[i]);
+    }
+    printf("\n");
+}
+
+-------------OR--------------<using strlen function>
+
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+    char name[]="nupur";
+    int length = strlen(name);
+    printf("length is: %d",length);
+}
+
+
+Q2) COMPARING 2 STRING
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+    char firstStr[]="Apple";
+    char secStr[]="Banana";
+    printf("%d",strcmp(secStr,firstStr));
+}
+
+
+Q3) Check whether string is palindrome or not using string functions.
+ANS)
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char string1[20];
+    int i, length;
+    int flag = 0;
+    
+    printf("Enter a string:");
+    scanf("%s", string1);
+    
+    length = strlen(string1);
+    
+    for(i=0;i < length ;i++){
+        if(string1[i] != string1[length-i-1]){
+            flag = 1;
+            break;
+           }
+        }
+    
+    if (flag) {
+        printf("%s is not a palindrome", string1);
+    }    
+    else {
+        printf("%s is a palindrome", string1);
+    }
+    return 0;
+}
+
+
+Q4)program to read a sentence and count the number of vowels and consonants in that sentence.
+ANS)
+
+#include<stdio.h>
+#include<string.h>
+void count(char* str)
+{
+    int vowels = 0, consonants = 0;
+    int i;
+    char ch;
+    for (i = 0; str[i] != '\0'; i++) {
+ 
+        ch = str[i];
+        if (ch == 'a' || ch == 'e'
+            || ch == 'i' || ch == 'o'
+            || ch == 'u' || ch == 'A'
+            || ch == 'E' || ch == 'I'
+            || ch == 'O' || ch == 'U')
+            vowels++;
+        else if (ch == ' '){
+            continue;}
+        else
+            consonants++;
+    }
+    printf("\nVowels: %d", vowels);
+    printf("\nConsonants: %d", consonants);
+    return consonants-1;
+}
+
+int main()
+{
+    char* str[100];
+    printf("Enter string : ");
+    fgets(str,100,stdin);
+    count(str);
+
+    return 0;
+}
+
+
+Q5)Implement a program to write characters into a file “filec.txt”. The set of characters are read form the keyboard until an enterkey is pressed. Also discuss the various file modes.
+
+ANS)
+#include<stdio.h>
+#include<string.h>
+void main(){
+    char ch;
+    FILE *fp;
+    fp=fopen("ABC.txt","w");
+    printf("\n Enter String (Enter to Compile): ");
+
+    while((ch=getchar())!= '\n'){
+        putc(ch,fp);
+    }
+    fclose(fp);
+    puts("\n Stored");
+
+    getch();
+}
+
+Q6) Implement a program to write name, age and height of a person into a data file “person.txt” and read it using fprintf() and fscanf() function
+
+ANS)
+#include<stdio.h>
+#include<stdlib.h>
+int main() {
+	char name[50];
+	int age,height,i,n;
+	printf("Enter number of students: ");
+	scanf("%d",&n);
+	FILE *fptr;
+	fptr=(fopen("ABC.txt","w"));
+	for (i=0;i<n;++i) {
+		printf("Entry %d\nEnter name: ",i+1);
+		scanf("%s",name);
+		printf("Enter Age: ");
+		scanf("%d",&age);
+        printf("Enter Height(in cm): ");
+		scanf("%d",&height);
+		fprintf(fptr,"\nName: %s \nage=%d \nHeight=%d",name,age,height);
+	}
+	fclose(fptr);
+	return 0;
+}
